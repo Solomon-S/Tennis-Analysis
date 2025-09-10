@@ -7,7 +7,6 @@ from src.model import train_model, show_model_performance
 from src.visualization import plot_win_probability, plot_player_stats
 
 def get_player_stats(player_name, df, current_surface):
-    """Get player statistics from DataFrame"""
     recent_matches = df[
         (df['player1_name'] == player_name) | 
         (df['player2_name'] == player_name)
@@ -41,7 +40,6 @@ def get_player_stats(player_name, df, current_surface):
     }
 
 def create_prediction_input(p1_stats, p2_stats, surface, tournament, df):
-    """Create input data for model prediction"""
     importance_map = {
         'Grand Slam': 4,
         'Masters 1000': 3,
